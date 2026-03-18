@@ -1,0 +1,262 @@
+.tunify-volume-wrapper {
+   flex: 1;
+   position: relative;
+   display: flex;
+   align-items: center;
+ }
+
+ .tunify-volume-tooltip {
+   position: absolute;
+   bottom: calc(100% + 6px);
+   left: 50%;
+   transform: translateX(-50%);
+   background: rgba(0,0,0,0.2);
+   backdrop-filter: blur(12px);
+   border: 1px solid rgba(255,255,255,0.1);
+   color: rgba(255,255,255,0.9);
+   font-size: 11px;
+   padding: 6px 12px;
+   border-radius: 6px;
+   white-space: nowrap;
+   pointer-events: none;
+   font-family: 'JetBrains Mono', monospace;
+ }
+
+.tunify-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+  border-radius: 12px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  background: rgba(0,0,0,0.50);
+  z-index: 99999;
+}
+
+.tunify-album-art {
+  width: 100%;
+  height: 70px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.tunify-art-inner {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tunify-live-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #e74c3c;
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.tunify-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tunify-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tunify-title {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.tunify-artist {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  margin: 0;
+}
+
+.tunify-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.tunify-icon-btn {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  padding: 4px;
+  outline: none;
+}
+
+.tunify-icon-btn:hover {
+  color: white;
+}
+
+.tunify-icon-btn.active {
+  color: #1db954;
+}
+
+.tunify-play {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.tunify-play:hover {
+  transform: scale(1.05);
+  background: #f0f0f0;
+}
+
+.tunify-volume {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.tunify-volume-slider {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.15);
+  outline: none;
+  cursor: pointer;
+}
+
+.tunify-volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+}
+
+.tunify-queue {
+  width: 100%;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 160px;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+}
+
+.tunify-queue::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Edge */
+}
+
+.tunify-queue-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tunify-queue-item:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.tunify-queue-item.active {
+  background: rgba(29,185,84,0.1);
+}
+
+.tunify-queue-item.active .tunify-queue-title {
+  color: #1c9646;
+}
+
+.tunify-queue-art {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tunify-queue-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+.tunify-queue-title {
+  font-size: 10px;
+  margin: 0;
+  color: rgba(255,255,255,0.9);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tunify-queue-artist {
+  font-size: 9px;
+  margin: 0;
+  color: rgba(255,255,255,0.4);
+}
+
+.tunify-queue-live {
+  font-size: 9px;
+  color: #e74c3c;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.tunify-icon-btn,
+.tunify-play {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.tunify-icon-btn:focus,
+.tunify-play:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}

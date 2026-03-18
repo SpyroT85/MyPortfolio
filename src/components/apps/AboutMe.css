@@ -1,0 +1,350 @@
+.mobile-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  height: 32px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 11px;
+  white-space: nowrap;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+ .mobile-download-btn:hover {
+   background: rgba(255,255,255,0.15);
+   color: #fff;
+ }
+
+.about-download-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  gap: 6px;
+  padding: 6px 14px;
+  width: fit-content;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  color: rgba(255,255,255,0.7);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.about-download-btn:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+@media (max-width: 768px) {
+  .about-download-btn {
+    display: none !important;
+  }
+}
+
+
+.about-open {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 4px 0 0;
+}
+.about-available {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  border-radius: 20px;
+  padding: 3px 10px;
+  width: fit-content;
+}
+.about-app {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  font-family: 'JetBrains Mono', monospace;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 4px 0;
+}
+
+/* Custom scrollbar */
+.about-app::-webkit-scrollbar {
+  width: 4px;
+}
+
+.about-app::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+}
+
+.about-app::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Header */
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 2px 0 8px;
+  animation: about-fade-in 0.4s ease both;
+}
+
+.about-avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  overflow: hidden;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.about-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: rgba(255,255,255,0.05);
+}
+
+.about-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: -4px;
+}
+
+.about-name {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  color: rgba(255,255,255,0.95);
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+.about-role {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  color: rgba(255,255,255,0.95);
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+.about-location {
+  font-size: 15px;
+  margin: 0;
+  color: rgba(255,255,255,0.90);
+  line-height: 1.4;
+}
+
+.about-open {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 4px 0 0;
+}
+
+/* Divider */
+.about-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.07);
+  margin: 4px 0;
+}
+
+/* Sections */
+.about-section {
+  padding: 14px 0;
+  animation: about-fade-in 0.5s ease both;
+}
+
+.about-section-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.50);
+  margin: 0 0 12px 0;
+}
+
+/* Bio */
+.about-bio {
+  font-size: 13px;
+  margin: 0;
+  color: rgba(255,255,255,0.80);
+  margin: 0;
+}
+
+/* Traits */
+.about-traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0 0 14px;
+  animation: about-fade-in 0.5s ease both;
+}
+
+.about-trait {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.30);
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.5px;
+}
+
+/* Experience */
+.about-exp-card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+}
+
+.about-exp-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  position: relative;
+}
+
+.about-exp-role {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,59.);
+}
+
+.about-exp-date {
+  font-size: 10px;
+  color: rgba(255,255,255,0.60);
+  margin-left: auto;
+}
+
+.about-exp-company {
+  font-size: 11px;
+  color: rgba(255,255,255,0.60);
+}
+
+.about-exp-company.gaspar {
+  margin-left: 52px;
+  margin-top: -4px;
+}
+
+.about-exp-header img {
+  position: relative;
+  top: 10px;
+}
+
+.about-exp-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.80);
+  margin: 4px 0 0;
+}
+
+/* Skills */
+.about-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.about-skill {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.30);
+  color: rgba(255,255,255,0.7);
+}
+
+/* Education */
+.about-edu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+}
+
+.about-edu-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.50);
+}
+
+.about-edu-school {
+  font-size: 12px;
+  color: rgba(255,255,255,0.80);
+}
+
+/* Animation */
+@keyframes about-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile fixes */@media (max-width: 768px) {
+  .about-app {
+    padding: 12px 16px;
+  }
+
+  .about-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .about-name {
+    font-size: 17px;
+  }
+
+  .about-role {
+    font-size: 14px;
+  }
+
+  .about-header {
+    gap: 12px;
+  }
+
+  .about-header-info {
+    margin-top: 0;
+  }
+}
+.mobile-icon-label {
+  white-space: pre-line;
+  text-align: center;
+}
+.mobile-weather-bar {
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+}

@@ -1,0 +1,54 @@
+.desktop-center-clock {
+  position: absolute;
+  text-align: center;
+  z-index: 5;
+  color: #fff;
+  font-family: '#codese', monospace;
+  pointer-events: auto;
+  user-select: none;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: none;
+  width: fit-content;
+  height: fit-content;
+}
+.clock-drag-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: transparent;
+  cursor: grab;
+}
+.clock-content {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+}
+.desktop-center-clock:active {
+  cursor: crosshair;
+}
+.dcc-day {
+  font-size: 100px;
+  font-weight: 200;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.45);
+}
+.dcc-date {
+  font-size: 40px;
+  font-weight: 400;
+  margin-top: 16px;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.45);
+}
+.dcc-time {
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 16px;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.45);
+}
+

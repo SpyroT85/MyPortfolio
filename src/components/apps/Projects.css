@@ -1,0 +1,387 @@
+.projects-app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px 24px 28px;
+  box-sizing: border-box;
+  background: transparent;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.projects-app::-webkit-scrollbar { display: none; }
+
+/* Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 14px;
+  align-items: stretch;
+}
+
+.project-card--wide {
+  grid-column: 1 / -1;
+}
+
+/* Card wrapper (header + card) */
+.project-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.project-card--wide.project-wrapper {
+  grid-column: 1 / -1;
+}
+
+/* Header row */
+.project-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.20);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+}
+
+.project-header-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.project-header-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 1px;
+  margin-left: auto;
+}
+
+/* Card */
+.project-card {
+  position: relative;
+  border-radius: 0 0 14px 14px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.20);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: border-color 0.35s, box-shadow 0.35s, transform 0.35s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-wrapper:hover .project-card {
+  border-color: rgba(255,255,255,0.18);
+  box-shadow:
+    0 8px 40px rgba(0,0,0,0.5),
+    0 0 60px rgba(255,255,255,0.02);
+  transform: translateY(-1px);
+}
+
+.project-wrapper:hover .project-header {
+  border-color: rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.07);
+}
+
+.project-wrapper:hover .project-header-title {
+  color: rgba(255,255,255,0.85);
+}
+
+/* Glow line top of header on hover */
+.project-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+.project-wrapper:hover .project-header::before {
+  opacity: 1;
+}
+
+/* Thumbnail */
+.project-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: rgba(0,0,0,0.3);
+  flex-shrink: 0;
+}
+
+.project-card--wide .project-thumb {
+  aspect-ratio: 21 / 7;
+}
+
+.project-thumb-link {
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.project-thumb::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0,0,0,0.65), transparent);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Carousel */
+.kb-carousel {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.kb-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: opacity, transform;
+  transform: scale(1);
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.project-wrapper:hover .kb-slide {
+  transform: scale(1.06);
+}
+
+.kb-slide--in {
+  z-index: 1;
+  animation: kb-in 700ms ease forwards;
+}
+@keyframes kb-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.kb-slide--out {
+  z-index: 2;
+  animation: kb-out 700ms ease forwards;
+}
+@keyframes kb-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.kb-slide--backdrop {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px) brightness(0.45);
+  transform: scale(1.15);
+  z-index: 0;
+}
+.kb-slide--foreground {
+  position: absolute; inset: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.project-wrapper:hover .kb-slide--foreground {
+  transform: scale(1.04);
+}
+
+/* Dots */
+.kb-dots {
+  position: absolute;
+  bottom: 10px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 5px;
+  z-index: 10;
+}
+.kb-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.kb-dot--active {
+  background: rgba(255,255,255,0.85);
+  transform: scale(1.4);
+}
+
+/* Placeholder */
+.project-thumb-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.project-thumb-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.project-thumb-initial {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 64px; font-weight: 700;
+  color: rgba(255,255,255,0.05);
+  user-select: none; position: relative; z-index: 1;
+}
+
+/* Body */
+.project-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px 16px;
+  flex: 1;
+  position: relative;
+}
+
+.project-tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tag-personal {
+  background: rgba(160,100,220,0.1);
+  border: 1px solid rgba(160,100,220,0.25);
+  color: rgba(190,140,255,0.9);
+}
+.tag-work {
+  background: rgba(50,180,110,0.1);
+  border: 1px solid rgba(50,180,110,0.25);
+  color: rgba(80,210,140,0.9);
+}
+
+.project-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.project-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.88);
+  margin: 0;
+  transition: color 0.2s;
+}
+.project-wrapper:hover .project-title {
+  color: #fff;
+}
+
+.project-subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: rgba(255,255,255,0.28);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.project-desc {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.5);
+  margin: 0;
+  flex: 1;
+}
+
+/* Stack */
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.project-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 5px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.30);
+  color: rgba(255,255,255,0.60);
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.project-wrapper:hover .project-badge {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.65);
+}
+
+/* Links */
+.project-links {
+  display: flex;
+  gap: 7px;
+  margin-top: auto;
+  padding-top: 4px;
+}
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  border: 1px solid rgba(255,255,255,0.40);
+  color: rgba(255,255,255,0.60);
+  text-decoration: none;
+  padding: 5px 12px;
+  border-radius: 7px;
+  border: 1px solid rgba(255,255,255,0.);
+  background: rgba(255,255,255,0.02);
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.project-link:hover {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.16);
+  color: rgba(255,255,255,0.85);
+}
+.project-link--live {
+  color: rgba(80,210,140,0.85);
+  border-color: rgba(50,180,110,0.2);
+  background: rgba(50,180,110,0.06);
+}
+.project-link--live:hover {
+  background: rgba(50,180,110,0.15);
+  border-color: rgba(50,180,110,0.38);
+  color: rgba(80,210,140,1);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-card--wide,
+  .project-wrapper.project-card--wide {
+    grid-column: auto;
+  }
+  .project-card--wide .project-thumb {
+    aspect-ratio: 16 / 9;
+  }
+}

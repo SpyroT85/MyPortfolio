@@ -1,0 +1,355 @@
+ .hs-right-col {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+   gap: 4px;
+ }
+
+ .hs-bottom-row {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   gap: 8px;
+ }
+ .hs-feels {
+   font-size: 11px;
+   color: rgba(255,255,255,0.60);
+   white-space: nowrap;
+ }
+
+.weather-icon {
+  filter: invert(1);
+  width: 56px;
+  height: 56px;
+}
+
+.weather-icon-small {
+  width: 16px;
+  height: 16px;
+  filter: invert(1);
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.weather-app {
+  background: transparent;
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+  padding: 15px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.weather-app h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.weather-search {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.search-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.weather-search input {
+  flex: 1;
+  min-width: 0;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 6px;
+  padding: 6px 8px;
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  outline: none;
+}
+
+.weather-search input::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+.weather-search input:focus {
+  border-color: rgba(255,255,255,0.4);
+}
+
+.weather-search button {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  padding: 6px 10px;
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.weather-search button:focus {
+  outline: none;
+}
+
+.weather-search button:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+.weather-search .suggestions {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+  z-index: 10;
+}
+
+.weather-search .suggestions li {
+  padding: 6px 10px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.8);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.weather-search .suggestions li:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  width: 100%;
+}
+
+.weather-temp-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.weather-info h3 {
+  font-size: 17px;
+  margin: 0;
+}
+
+.weather-temp {
+  font-size: 36px;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.weather-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.weather-details {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+}
+
+.weather-loading {
+  color: rgba(255,255,255,0.5);
+  font-size: 11px;
+}
+
+.weather-error {
+  color: #ff6b6b;
+  font-size: 11px;
+}
+
+.forecast {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 2px;
+  width: 100%;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 8px;
+  margin-top: 0;
+  justify-content: space-between;
+  padding-bottom: 4px;
+  overflow: hidden;
+}
+
+.forecast-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 2px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 6px;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.forecast-date {
+  font-size: 10px;
+  color: rgba(255,255,255,0.7);
+  white-space: nowrap;
+}
+
+.forecast-temp {
+  font-size: 10px;
+  color: rgba(255,255,255,0.9);
+  white-space: nowrap;
+}
+
+@media (max-height: 700px) {
+  .weather-info {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 12px;
+  }
+
+  .weather-temp {
+    font-size: 22px;
+  }
+
+  .weather-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .weather-app {
+    gap: 4px;
+    padding: 8px;
+  }
+}
+
+/* ─── HOMESCREEN WIDGET (Android-style, floating) ─────────── */
+
+/* Outer wrapper — provides the gap from screen edges */
+.hs-widget-wrap {
+  padding: 16px 14px 0 14px;
+}
+
+.hs-widget {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 12px 14px;
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(0, 0, 0, 0.20);
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  gap: 12px;
+  position: relative;
+}
+
+/* Refresh button — tiny, top-left corner */
+.hs-refresh {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.40);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 2px;
+  line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.2s, transform 0.35s;
+}
+
+.hs-refresh:active {
+  color: #fff;
+  transform: rotate(180deg);
+}
+
+/* Left: clock + date/location */
+.hs-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 14px; /* clear refresh icon */
+}
+
+.hs-time {
+  font-size: 35px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+.hs-date-loc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.70);
+  white-space: nowrap;
+}
+
+.hs-loc {
+  color: rgba(255,255,255,0.55);
+}
+
+/* Right: icon + temp + range (NO feels like) */
+.hs-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.hs-icon {
+  width: 46px;
+  height: 46px;
+  filter: invert(1) drop-shadow(0 0 6px rgba(255,200,100,0.35));
+  flex-shrink: 0;
+}
+
+.hs-temps {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+}
+
+.hs-temp {
+  font-size: 30px;
+  font-weight: 7000;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.hs-loading {
+  font-size: 18px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 4px;
+}
