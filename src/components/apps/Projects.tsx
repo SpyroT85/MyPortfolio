@@ -21,6 +21,7 @@ const projects: Project[] = [
     description:
       "E-commerce demo for a luxury accessories brand, watches, pens, inkwells & compasses. Product pages, cart with Zustand, smooth animations with Framer Motion.",
     stack: ["React", "TypeScript", "Tailwind CSS", "Responsive"],
+    github: "https://github.com/SpyroT85/Atrani-store",
     live: "https://atrani.spyros-tserkezos.dev/",
     thumbnails: [
       "/thumbnails/atrani/1.png",
@@ -62,7 +63,8 @@ const projects: Project[] = [
     description:
       "Chat widget with mock conversation data, file context support, persistent chat history, and typing indicators.",
     stack: ["React", "TypeScript", "Tailwind CSS", "Zustand", "Desktop"],
-    live: "https://virtual-assistant.spyros-tserkezos.dev/",
+    github: "https://github.com/SpyroT85/Atrani-store",
+    live: "https://github.com/SpyroT85/Chat-Bot-Assistant-ESPA-Project-",
     thumbnails: [
       "/thumbnails/espa/espa1.png",
       "/thumbnails/espa/espa2.png",
