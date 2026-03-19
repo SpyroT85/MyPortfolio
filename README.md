@@ -8,7 +8,7 @@ A portfolio that boots like an OS.
 
 ---
 
-A desktop OS-inspired portfolio built with React + TypeScript. Features a boot sequence, draggable windows, a weather widget, and a music player — all running in the browser.
+A desktop OS-inspired portfolio built with React + TypeScript. Features a boot sequence, draggable windows, a weather widget, and a music player, all running in the browser.
 
 ## Features
 
