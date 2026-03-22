@@ -1,8 +1,6 @@
 # My PortfoliOS+
 
-> A portfolio that boots like an OS.
-
-Live at: [your-vercel-url.vercel.app](spyros-tserkezos.devhttps://)
+A portfolio that boots like an OS.
 
 ![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
@@ -10,7 +8,7 @@ Live at: [your-vercel-url.vercel.app](spyros-tserkezos.devhttps://)
 
 ---
 
-A desktop OS-inspired portfolio built with React + TypeScript. Features a boot sequence, draggable windows, a weather widget, and a music player — all running in the browser.
+A desktop OS-inspired portfolio built with React + TypeScript. Features a boot sequence, draggable windows, a weather widget, and a music player, all running in the browser.
 
 ## Features
 

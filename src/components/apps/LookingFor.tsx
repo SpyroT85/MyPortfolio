@@ -65,7 +65,7 @@ const LookingFor = () => {
           <span className="lf-card-icon" style={{ color: '#a78bfa' }}><IconBriefcase /></span>
           <div className="lf-card-body">
             <span className="lf-card-label">Role</span>
-            <span className="lf-card-value">Junior Frontend Developer</span>
+            <span className="lf-card-value">Junior Fullstack Developer</span>
           </div>
         </div>
 
@@ -100,6 +100,7 @@ const LookingFor = () => {
               <span className="lf-tag">React</span>
               <span className="lf-tag">TypeScript</span>
               <span className="lf-tag">Node.js</span>
+              <span className="lf-tag">PostgreSQL</span>
               <span className="lf-tag">CSS</span>
               <span className="lf-tag">Tailwind CSS</span>
               <span className="lf-tag">Git</span>
@@ -116,6 +117,8 @@ const LookingFor = () => {
             <img src="icons/tools/JavaScript.svg" width="30" height="30" />
             {/* Node.js */}
             <img src="icons/tools/Node.svg" width="30" height="30" />
+            {/* PostgreSQL */}
+            <img src="icons/tools/Postgresql.svg" width="42" height="42" />
             {/* Tailwind */}
             <img src="icons/tools/Tailwind_CSS.svg" width="30" height="30" />
             {/* Git */}

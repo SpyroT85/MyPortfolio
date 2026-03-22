@@ -17,11 +17,11 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Atrani Store",
-    subtitle: "E-Commerce",
+    subtitle: "Full Stack E-Commerce",
     description:
-      "E-commerce demo for a luxury accessories brand, watches, pens, inkwells & compasses. Product pages, cart with Zustand, smooth animations with Framer Motion.",
-    stack: ["React", "TypeScript", "Tailwind CSS", "Responsive"],
-    github: "https://github.com/SpyroT85/Atrani-store",
+      "A full-stack e-commerce platform for a luxury accessories brand with a custom admin panel. Built with React and Node.js/Express REST API, featuring JWT + Google OAuth authentication, email verification via Brevo, role-based access control, Cloudinary image uploads, an admin invitation system, and an analytics dashboard. Deployed on Vercel and Render with PostgreSQL on Neon.",
+    stack: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "Tailwind CSS", "Cloudinary", "Brevo"],
+    github: "https://github.com/SpyroT85/Atrani-Store-Fullstack",
     live: "https://atrani.spyros-tserkezos.dev/",
     thumbnails: [
       "/thumbnails/atrani/1.png",
@@ -30,7 +30,7 @@ const projects: Project[] = [
       "/thumbnails/atrani/4.png",
     ],
     tag: "Personal",
-    tagColor: "tag-personal",
+  tagColor: "tag-personal",
   },
   {
     title: "Grill Gamers Bot",
