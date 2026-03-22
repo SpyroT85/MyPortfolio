@@ -21,7 +21,7 @@ const projects: Project[] = [
     title: "Atrani Store",
     subtitle: "Full Stack E-Commerce",
     description:
-      "A full-stack e-commerce platform for a luxury accessories brand with a custom admin panel. Built with React and Node.js/Express REST API, featuring JWT + Google OAuth authentication, email verification via Brevo, role-based access control, Cloudinary image uploads, an admin invitation system, and an analytics dashboard. Deployed on Vercel and Render with PostgreSQL on Neon.",
+      "A full stack e-commerce platform for a luxury accessories brand with a custom admin panel. Built with React and Node.js/Express REST API, featuring JWT + Google OAuth authentication, email verification via Brevo, role based access control, Cloudinary image uploads, an admin invitation system, and an analytics dashboard. Deployed on Vercel and Render with PostgreSQL on Neon.",
     stack: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "Tailwind CSS", "Cloudinary", "Brevo"],
     github: "https://github.com/SpyroT85/Atrani-Store-Fullstack",
     live: "https://atrani.spyros-tserkezos.dev/",
@@ -38,7 +38,7 @@ const projects: Project[] = [
     title: "Atrani Admin Panel",
     subtitle: "Internal Dashboard",
     description:
-      "A custom-built admin dashboard for the Atrani platform. Features include product management with real-time stock tracking, a notification system for new signups and low stock alerts, an analytics page with charts, dark mode, and secure admin-only access via JWT and an invitation system.",
+      "A custom built admin dashboard for the Atrani platform. Features include product management with real time stock tracking, a notification system for new signups and low stock alerts, an analytics page with charts, dark mode, and secure admin-only access via JWT and an invitation system.",
     stack: ["React", "TypeScript", "Tailwind CSS", "Recharts", "Node.js", "PostgreSQL"],
     github: "https://github.com/SpyroT85/Atrani-Store-Fullstack",
     live: "https://admin.spyros-tserkezos.dev",
