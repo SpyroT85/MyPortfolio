@@ -74,7 +74,7 @@ export const useWindowStore = create<Store>((set) => ({
       app,
       title: APP_TITLES[app],
       position: { x: 20 + state.windows.length * 30, y: 20 + state.windows.length * 30 },
-      size: { w: 1100, h: 750 },
+      size: app === 'projects' ? { w: 1500, h: 830 } : { w: 1100, h: 750 },
       minimized: false,
       maximized: false,
       isRestoring: false,

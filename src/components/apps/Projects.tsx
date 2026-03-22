@@ -11,9 +11,11 @@ interface Project {
   live?: string;
   thumbnails?: string[];
   blurBackdrop?: boolean;
+  thumbnailPosition?: string;
   tag: string;
   tagColor: string;
 }
+
 const projects: Project[] = [
   {
     title: "Atrani Store",
@@ -30,7 +32,27 @@ const projects: Project[] = [
       "/thumbnails/atrani/4.png",
     ],
     tag: "Personal",
-  tagColor: "tag-personal",
+    tagColor: "tag-personal",
+  },
+  {
+    title: "Atrani Admin Panel",
+    subtitle: "Internal Dashboard",
+    description:
+      "A custom-built admin dashboard for the Atrani platform. Features include product management with real-time stock tracking, a notification system for new signups and low stock alerts, an analytics page with charts, dark mode, and secure admin-only access via JWT and an invitation system.",
+    stack: ["React", "TypeScript", "Tailwind CSS", "Recharts", "Node.js", "PostgreSQL"],
+    github: "https://github.com/SpyroT85/Atrani-Store-Fullstack",
+    live: "https://admin.spyros-tserkezos.dev",
+    thumbnails: [
+      "/thumbnails/admin-panel/admin-panel1.png",
+      "/thumbnails/admin-panel/admin-panel2.png",
+      "/thumbnails/admin-panel/admin-panel3.png",
+      "/thumbnails/admin-panel/admin-panel4.png",
+      "/thumbnails/admin-panel/admin-panel5.png",
+      "/thumbnails/admin-panel/admin-panel6.png",
+    ],
+    thumbnailPosition: "top center",
+    tag: "Personal",
+    tagColor: "tag-personal",
   },
   {
     title: "Grill Gamers Bot",
@@ -78,9 +100,10 @@ const projects: Project[] = [
 interface CarouselProps {
   thumbnails: string[];
   blurBackdrop?: boolean;
+  thumbnailPosition?: string;
 }
 
-const FadeCarousel = ({ thumbnails, blurBackdrop = false }: CarouselProps) => {
+const FadeCarousel = ({ thumbnails, blurBackdrop = false, thumbnailPosition = "center" }: CarouselProps) => {
   const [current, setCurrent] = useState(0);
   const [prev, setPrev] = useState<number | null>(null);
 
@@ -117,9 +140,9 @@ const FadeCarousel = ({ thumbnails, blurBackdrop = false }: CarouselProps) => {
       ) : (
         <>
           {prev !== null && (
-            <div className="kb-slide kb-slide--out" style={{ backgroundImage: `url(${thumbnails[prev]})` }} />
+            <div className="kb-slide kb-slide--out" style={{ backgroundImage: `url(${thumbnails[prev]})`, backgroundPosition: thumbnailPosition }} />
           )}
-          <div key={current} className="kb-slide kb-slide--in" style={{ backgroundImage: `url(${thumbnails[current]})` }} />
+          <div key={current} className="kb-slide kb-slide--in" style={{ backgroundImage: `url(${thumbnails[current]})`, backgroundPosition: thumbnailPosition }} />
         </>
       )}
       {thumbnails.length > 1 && (
@@ -139,6 +162,7 @@ const Projects = () => {
       <div className="projects-grid">
         {projects.map((p, i) => {
           const isWide = i === projects.length - 1 && projects.length % 2 !== 0;
+          const thumbLink = p.live ?? p.github;
           return (
             <div className={`project-wrapper${isWide ? " project-card--wide" : ""}`} key={p.title}>
 
@@ -152,12 +176,12 @@ const Projects = () => {
               <div className="project-card">
                 <div className="project-thumb">
                   {p.thumbnails && p.thumbnails.length > 0 ? (
-                    p.live ? (
-                      <a href={p.live} target="_blank" rel="noopener noreferrer" className="project-thumb-link">
-                        <FadeCarousel thumbnails={p.thumbnails} blurBackdrop={p.blurBackdrop} />
+                    thumbLink ? (
+                      <a href={thumbLink} target="_blank" rel="noopener noreferrer" className="project-thumb-link">
+                        <FadeCarousel thumbnails={p.thumbnails} blurBackdrop={p.blurBackdrop} thumbnailPosition={p.thumbnailPosition} />
                       </a>
                     ) : (
-                      <FadeCarousel thumbnails={p.thumbnails} blurBackdrop={p.blurBackdrop} />
+                      <FadeCarousel thumbnails={p.thumbnails} blurBackdrop={p.blurBackdrop} thumbnailPosition={p.thumbnailPosition} />
                     )
                   ) : (
                     <div className="project-thumb-placeholder">
