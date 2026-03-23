@@ -72,6 +72,7 @@ const GlassIcons: React.FC<GlassIconsProps> = ({ items, className, dragProps, sc
           <button
             key={index}
             type="button"
+            data-cy={`icon-${item.label.replace(/\s+/g, '-').replace(/\n/g, '-').toLowerCase()}`}
             className={`icon-btn ${item.customClass || ''}`}
             aria-label={item.label}
             onClick={handleClick}

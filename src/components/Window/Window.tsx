@@ -123,11 +123,11 @@ const Window = ({ window: win, children, scale = 1 }: Props) => {
       <div className="window-titlebar" onMouseDown={e => { onMouseDown(e); focusWindow(win.id); }}>
         <span className="window-title">{win.title}</span>
         <div className="window-controls">
-          <button className="window-btn minimize" onClick={handleMinimize}>─</button>
-          <button className="window-btn maximize" onClick={handleMaximize}>
-            {win.maximized ? '❐' : '□'}
+          <button data-cy={`minimize-${win.app}`} className="window-btn minimize" onClick={handleMinimize}>─</button>
+          <button data-cy={`maximize-${win.app}`} className="window-btn maximize" onClick={handleMaximize}>
+            {win.maximized ? '❐' : '▢'}
           </button>
-          <button className="window-btn close" onClick={() => closeWindow(win.id)}>✕</button>
+          <button data-cy={`close-${win.app}`} className="window-btn close" onClick={() => closeWindow(win.id)}>✕</button>
         </div>
       </div>
       <div className="window-content">{children}</div>

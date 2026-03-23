@@ -21,6 +21,7 @@ const AboutMe = () => {
           </p>
           <span className="about-available">✦ Open to work</span>
           <a
+            data-cy="download-cv"
             href="/spyros-tserkezos-cv.pdf"
             download="spyros-tserkezos-cv.pdf"
             target="_blank"

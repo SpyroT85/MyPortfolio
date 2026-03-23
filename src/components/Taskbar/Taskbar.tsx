@@ -42,6 +42,7 @@ const StartMenuButton = () => {
   return (
     <div ref={menuRef} style={{ position: 'relative' }}>
       <button
+        data-cy="start-menu-btn"
         onClick={() => setShowStartMenu(!showStartMenu)}
         style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex' }}
       >
@@ -55,7 +56,7 @@ const StartMenuButton = () => {
 
       {showStartMenu && (
         <div className="start-menu">
-          <button className="start-menu-item" onClick={() => window.location.reload()}>
+          <button data-cy="shutdown-btn" className="start-menu-item" onClick={() => window.location.reload()}>
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M18.36 6.64A9 9 0 1 1 5.64 6.64" />
               <line x1="12" y1="2" x2="12" y2="12" />

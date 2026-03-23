@@ -18,7 +18,7 @@ const BASE_WIDTH = 1440;
 const BASE_HEIGHT = 900;
 
 const MOBILE_APPS = [
-  { label: 'About Me\n& Resume', icon: <FiUser size={28} />,   app: 'about'      as const },
+  { label: 'About Me', icon: <FiUser size={28} />,   app: 'about'      as const },
   { label: 'Projects',           icon: <FiFolder size={28} />, app: 'projects'   as const },
   { label: 'Contact Me',         icon: <FiMail size={28} />,   app: 'contact'    as const },
   { label: 'Looking For',        icon: <FiSearch size={28} />, app: 'lookingfor' as const },
@@ -57,7 +57,7 @@ const Desktop = () => {
   };
 
   const items = [
-    { icon: <FiUser size={20} />,   color: 'hsla(0, 0%, 50%, 0.6)', label: 'About Me\n& Resume', onClick: () => handleIconClick('about') },
+    { icon: <FiUser size={20} />,   color: 'hsla(0, 0%, 50%, 0.6)', label: 'About Me', onClick: () => handleIconClick('about') },
     { icon: <FiFolder size={20} />, color: 'hsla(0, 0%, 50%, 0.6)', label: 'Projects',    onClick: () => handleIconClick('projects') },
     { icon: <FiMail size={20} />,   color: 'hsla(0, 0%, 50%, 0.6)', label: 'Contact me',  onClick: () => handleIconClick('contact') },
     { icon: <FiSearch size={20} />, color: 'hsla(0, 0%, 50%, 0.6)', label: 'Looking For', onClick: () => handleIconClick('lookingfor') },

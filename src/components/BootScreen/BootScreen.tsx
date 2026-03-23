@@ -59,6 +59,7 @@ const BootScreen = ({ onBoot }: Props) => {
           />
           <div className="power-wrap">
             <button
+              data-cy="power-button"
               className="power-button"
               onClick={() => {
                 playPowerOnSound();
