@@ -15,7 +15,7 @@ const AboutMe = () => {
         </div>
         <div className="about-header-info">
           <h1 className="about-name">Spyros Tserkezos</h1>
-          <p className="about-role">Junior Full Stack Developer</p>
+          <p className="about-role">Frontend Developer</p>
           <p className="about-location">
             <img src="/icons/pin.svg" alt="Pin" style={{ width: '1.1em', verticalAlign: 'middle' }} /> Athens, Greece
           </p>
@@ -41,7 +41,7 @@ const AboutMe = () => {
 
       <div className="about-section">
         <p className="about-bio">
-          I'm a Junior Full Stack Developer who recently completed a 6-month internship focusing on React, TypeScript, and Tailwind CSS. Since then I have expanded into backend development, building and deploying a complete full-stack platform with Node.js, PostgreSQL, and a custom admin panel. Creative by nature, consistent and always in search of growth, both as a developer and as a person.
+          I'm a Frontend Developer who recently completed a 6-month internship focusing on React, TypeScript, and Tailwind CSS. Since then I have expanded into backend development, building and deploying a complete full-stack platform with Node.js, PostgreSQL, and a custom admin panel. Creative by nature, consistent and always in search of growth, both as a developer and as a person.
         </p>
       </div>
 
